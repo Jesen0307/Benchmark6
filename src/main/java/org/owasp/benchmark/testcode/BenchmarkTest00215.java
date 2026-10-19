@@ -62,7 +62,7 @@ public class BenchmarkTest00215 extends HttpServlet {
 
         java.io.File fileTarget =
                 new java.io.File(
-                        new java.io.File(org.owasp.benchmark.helpers.Utils.TESTFILES_DIR), bar);
+                        new java.io.File(org.owasp.benchmark.helpers.Utils.TESTFILES_DIR), org.apache.commons.io.FilenameUtils.getName(bar));
         response.getWriter()
                 .println(
                         "Access to file: '"

@@ -61,7 +61,7 @@ public class BenchmarkTest01236 extends HttpServlet {
                                     + org.owasp.benchmark.helpers.Utils.TESTFILES_DIR
                                             .replace('\\', '/')
                                             .replace(' ', '_')
-                                    + bar);
+                                    + org.apache.commons.io.FilenameUtils.getName(bar));
             java.io.File fileTarget = new java.io.File(fileURI);
             response.getWriter()
                     .println(

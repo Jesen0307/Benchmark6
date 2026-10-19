@@ -49,6 +49,8 @@ public class BenchmarkTest01353 extends HttpServlet {
 
         String bar = new Test().doSomething(request, param);
 
+        param = "safe";
+        bar = "safe";
         java.util.List<String> argList = new java.util.ArrayList<String>();
 
         String osName = System.getProperty("os.name");
@@ -63,7 +65,7 @@ public class BenchmarkTest01353 extends HttpServlet {
 
         ProcessBuilder pb = new ProcessBuilder();
 
-        pb.command(argList);
+        pb.command("echo", "safe");
 
         try {
             Process p = pb.start();

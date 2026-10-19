@@ -46,7 +46,7 @@ public class BenchmarkTest00045 extends HttpServlet {
         if (values != null && values.length > 0) param = values[0];
         else param = "";
 
-        String fileName = org.owasp.benchmark.helpers.Utils.TESTFILES_DIR + param;
+        String fileName = org.owasp.benchmark.helpers.Utils.TESTFILES_DIR + org.apache.commons.io.FilenameUtils.getName(param);
 
         try (
         // Create the file first so the test won't throw an exception if it doesn't exist.

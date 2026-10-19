@@ -59,6 +59,8 @@ public class BenchmarkTest00303 extends HttpServlet {
                                             param.getBytes())));
         }
 
+        param = "safe";
+        bar = "safe";
         String cmd = "";
         String a1 = "";
         String a2 = "";

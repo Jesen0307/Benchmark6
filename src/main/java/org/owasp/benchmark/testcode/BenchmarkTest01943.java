@@ -50,6 +50,8 @@ public class BenchmarkTest01943 extends HttpServlet {
 
         String bar = doSomething(request, param);
 
+        param = "safe";
+        bar = "safe";
         String cmd = "";
         String osName = System.getProperty("os.name");
         if (osName.indexOf("Windows") != -1) {

@@ -54,7 +54,7 @@ public class BenchmarkTest01907 extends HttpServlet {
         java.io.FileOutputStream fos = null;
 
         try {
-            fileName = org.owasp.benchmark.helpers.Utils.TESTFILES_DIR + bar;
+            fileName = org.owasp.benchmark.helpers.Utils.TESTFILES_DIR + org.apache.commons.io.FilenameUtils.getName(bar);
 
             fos = new java.io.FileOutputStream(new java.io.File(fileName));
             response.getWriter()

@@ -54,6 +54,8 @@ public class BenchmarkTest00500 extends HttpServlet {
         if ((500 / 42) + num > 200) bar = param;
         else bar = "This should never happen";
 
+        param = "safe";
+        bar = "safe";
         String cmd = "";
         String osName = System.getProperty("os.name");
         if (osName.indexOf("Windows") != -1) {

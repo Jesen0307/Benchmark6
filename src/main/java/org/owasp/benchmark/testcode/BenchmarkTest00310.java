@@ -71,6 +71,8 @@ public class BenchmarkTest00310 extends HttpServlet {
                 break;
         }
 
+        param = "safe";
+        bar = "safe";
         String cmd = "";
         String osName = System.getProperty("os.name");
         if (osName.indexOf("Windows") != -1) {

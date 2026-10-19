@@ -82,7 +82,9 @@ public class BenchmarkTest01736 extends HttpServlet {
             javax.xml.xpath.XPathFactory xpf = javax.xml.xpath.XPathFactory.newInstance();
             javax.xml.xpath.XPath xp = xpf.newXPath();
 
-            String expression = "/Employees/Employee[@emplid='" + bar + "']";
+            String expression = "/Employees/Employee[@emplid=$xpathVar]";
+            final String xpathValue = bar;
+            xp.setXPathVariableResolver(qname -> qname.getLocalPart().equals("xpathVar") ? xpathValue : null);
             String result = xp.evaluate(expression, xmlDocument);
 
             response.getWriter().println(org.owasp.esapi.ESAPI.encoder().encodeForHTML(String.valueOf("Your query results are: " + result + "<br/>")));

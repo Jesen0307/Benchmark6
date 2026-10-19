@@ -53,7 +53,7 @@ public class BenchmarkTest00712 extends HttpServlet {
         else bar = param;
 
         response.setHeader("X-XSS-Protection", "0");
-        Object[] obj = {"a", bar};
+        Object[] obj = {"a", org.owasp.esapi.ESAPI.encoder().encodeForHTML(String.valueOf(bar))};
         java.io.PrintWriter out = response.getWriter();
         out.write("<!DOCTYPE html>\n<html>\n<body>\n<p>");
         out.format(java.util.Locale.US, "Formatted like: %1$s and %2$s.", obj);

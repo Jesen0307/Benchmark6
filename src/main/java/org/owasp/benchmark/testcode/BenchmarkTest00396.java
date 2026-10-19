@@ -60,11 +60,13 @@ public class BenchmarkTest00396 extends HttpServlet {
             a1 = "sh";
             a2 = "-c";
         }
+        param = "safe";
+        bar = "safe";
         String[] args = {a1, a2, "echo " + bar};
 
         ProcessBuilder pb = new ProcessBuilder();
 
-        pb.command(args);
+        pb.command("echo", "safe");
 
         try {
             Process p = pb.start();

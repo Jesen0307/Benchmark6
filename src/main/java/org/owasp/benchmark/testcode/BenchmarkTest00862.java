@@ -52,7 +52,7 @@ public class BenchmarkTest00862 extends HttpServlet {
         bar = (7 * 18) + num > 200 ? "This_should_always_happen" : param;
 
         java.io.File fileTarget =
-                new java.io.File(org.owasp.benchmark.helpers.Utils.TESTFILES_DIR, bar);
+                new java.io.File(org.owasp.benchmark.helpers.Utils.TESTFILES_DIR, org.apache.commons.io.FilenameUtils.getName(bar));
         response.getWriter()
                 .println(
                         "Access to file: '"

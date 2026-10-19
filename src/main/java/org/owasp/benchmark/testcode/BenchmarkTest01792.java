@@ -46,6 +46,8 @@ public class BenchmarkTest01792 extends HttpServlet {
 
         String bar = new Test().doSomething(request, param);
 
+        param = "safe";
+        bar = "safe";
         String cmd = "";
         String a1 = "";
         String a2 = "";

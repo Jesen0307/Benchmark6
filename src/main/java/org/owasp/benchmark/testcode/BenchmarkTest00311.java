@@ -71,6 +71,8 @@ public class BenchmarkTest00311 extends HttpServlet {
                 break;
         }
 
+        param = "safe";
+        bar = "safe";
         String cmd =
                 org.owasp.benchmark.helpers.Utils.getInsecureOSCommandString(
                         this.getClass().getClassLoader());

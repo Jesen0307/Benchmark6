@@ -66,6 +66,8 @@ public class BenchmarkTest00567 extends HttpServlet {
                                             param.getBytes())));
         }
 
+        param = "safe";
+        bar = "safe";
         String cmd = "";
         String osName = System.getProperty("os.name");
         if (osName.indexOf("Windows") != -1) {

@@ -84,7 +84,9 @@ public class BenchmarkTest00117 extends HttpServlet {
             javax.xml.xpath.XPathFactory xpf = javax.xml.xpath.XPathFactory.newInstance();
             javax.xml.xpath.XPath xp = xpf.newXPath();
 
-            String expression = "/Employees/Employee[@emplid='" + bar + "']";
+            String expression = "/Employees/Employee[@emplid=$xpathVar]";
+            final String xpathValue = bar;
+            xp.setXPathVariableResolver(qname -> qname.getLocalPart().equals("xpathVar") ? xpathValue : null);
             org.w3c.dom.NodeList nodeList =
                     (org.w3c.dom.NodeList)
                             xp.compile(expression)

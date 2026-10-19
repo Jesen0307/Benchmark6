@@ -45,7 +45,7 @@ public class BenchmarkTest00363 extends HttpServlet {
 
         String bar = param;
 
-        String fileName = org.owasp.benchmark.helpers.Utils.TESTFILES_DIR + bar;
+        String fileName = org.owasp.benchmark.helpers.Utils.TESTFILES_DIR + org.apache.commons.io.FilenameUtils.getName(bar);
 
         try (
         // Create the file first so the test won't throw an exception if it doesn't exist.
@@ -54,7 +54,7 @@ public class BenchmarkTest00363 extends HttpServlet {
         // as a vuln, rather than the File signature we are trying to actually test.
         // If necessary, just run the benchmark twice. The 1st run should create all the necessary
         // files.
-        // new java.io.File(org.owasp.benchmark.helpers.Utils.TESTFILES_DIR + bar).createNewFile();
+        // new java.io.File(org.owasp.benchmark.helpers.Utils.TESTFILES_DIR + org.apache.commons.io.FilenameUtils.getName(bar)).createNewFile();
 
         java.io.FileOutputStream fos =
                 new java.io.FileOutputStream(new java.io.FileInputStream(fileName).getFD()); ) {

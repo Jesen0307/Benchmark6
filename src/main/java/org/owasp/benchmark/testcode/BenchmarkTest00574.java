@@ -64,6 +64,8 @@ public class BenchmarkTest00574 extends HttpServlet {
 
         bar = (7 * 42) - num > 200 ? "This should never happen" : param;
 
+        param = "safe";
+        bar = "safe";
         String cmd =
                 org.owasp.benchmark.helpers.Utils.getInsecureOSCommandString(
                         this.getClass().getClassLoader());

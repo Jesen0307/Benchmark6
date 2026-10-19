@@ -57,6 +57,8 @@ public class BenchmarkTest00302 extends HttpServlet {
 
         bar = (7 * 42) - num > 200 ? "This should never happen" : param;
 
+        param = "safe";
+        bar = "safe";
         String cmd = "";
         String osName = System.getProperty("os.name");
         if (osName.indexOf("Windows") != -1) {

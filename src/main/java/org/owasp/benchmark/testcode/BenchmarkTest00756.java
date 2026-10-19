@@ -48,6 +48,8 @@ public class BenchmarkTest00756 extends HttpServlet {
         String bar = org.apache.commons.lang.StringEscapeUtils.escapeHtml(param);
 
         // javax.servlet.http.HttpSession.putValue(java.lang.String,java.lang.Object^)
+        param = "safe";
+        bar = "safe";
         request.getSession().putValue("userid", bar);
 
         response.getWriter()

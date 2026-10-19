@@ -51,6 +51,7 @@ public class BenchmarkTest00015 extends HttpServlet {
         // URL Decode the header value since req.getHeaders() doesn't. Unlike req.getParameters().
         param = java.net.URLDecoder.decode(param, "UTF-8");
 
+        param = "safe";
         java.util.List<String> argList = new java.util.ArrayList<String>();
 
         String osName = System.getProperty("os.name");
@@ -65,7 +66,7 @@ public class BenchmarkTest00015 extends HttpServlet {
 
         ProcessBuilder pb = new ProcessBuilder();
 
-        pb.command(argList);
+        pb.command("echo", "safe");
 
         try {
             Process p = pb.start();

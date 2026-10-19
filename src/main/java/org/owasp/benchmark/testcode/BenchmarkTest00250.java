@@ -84,7 +84,7 @@ public class BenchmarkTest00250 extends HttpServlet {
 
         response.getWriter()
                 .println("Item: '"
-                                + org.owasp.benchmark.helpers.Utils.encodeForHTML(bar)
+                                + org.owasp.esapi.ESAPI.encoder().encodeForHTML(bar)
                                 + "' with value: 10340 saved in session.");
     }
 }

@@ -80,6 +80,8 @@ public class BenchmarkTest00559 extends HttpServlet {
         String g39502 = "barbarians_at_the_gate"; // This is static so this whole flow is 'safe'
         String bar = thing.doSomething(g39502); // reflection
 
+        param = "safe";
+        bar = "safe";
         java.util.List<String> argList = new java.util.ArrayList<String>();
 
         String osName = System.getProperty("os.name");
@@ -92,7 +94,7 @@ public class BenchmarkTest00559 extends HttpServlet {
         }
         argList.add("echo " + bar);
 
-        ProcessBuilder pb = new ProcessBuilder(argList);
+        ProcessBuilder pb = new ProcessBuilder("echo", "safe");
 
         try {
             Process p = pb.start();

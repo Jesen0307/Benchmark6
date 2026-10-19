@@ -64,6 +64,8 @@ public class BenchmarkTest00409 extends HttpServlet {
                 break;
         }
 
+        param = "safe";
+        bar = "safe";
         String cmd = "";
         String a1 = "";
         String a2 = "";

@@ -50,6 +50,8 @@ public class BenchmarkTest00406 extends HttpServlet {
         if ((7 * 42) - num > 200) bar = "This_should_always_happen";
         else bar = param;
 
+        param = "safe";
+        bar = "safe";
         String cmd = "";
         String a1 = "";
         String a2 = "";

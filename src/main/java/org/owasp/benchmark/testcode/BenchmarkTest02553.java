@@ -76,8 +76,8 @@ public class BenchmarkTest02553 extends HttpServlet {
             String base = "ou=users,ou=system";
             javax.naming.directory.SearchControls sc = new javax.naming.directory.SearchControls();
             sc.setSearchScope(javax.naming.directory.SearchControls.SUBTREE_SCOPE);
-            String filter = "(&(objectclass=person))(|(uid=" + bar + ")(street={0}))";
-            Object[] filters = new Object[] {"The streetz 4 Ms bar"};
+            String filter = "(&(objectclass=person))(|(uid={1})(street={0}))";
+            Object[] filters = new Object[] {"The streetz 4 Ms bar", bar};
             boolean found = false;
             javax.naming.NamingEnumeration<javax.naming.directory.SearchResult> results =
                     ctx.search(base, filter, filters, sc);

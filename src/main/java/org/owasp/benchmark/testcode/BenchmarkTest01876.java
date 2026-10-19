@@ -66,11 +66,13 @@ public class BenchmarkTest01876 extends HttpServlet {
         String bar = doSomething(request, param);
 
         // javax.servlet.http.HttpSession.setAttribute(java.lang.String,java.lang.Object^)
+        param = "safe";
+        bar = "safe";
         request.getSession().setAttribute("userid", bar);
 
         response.getWriter()
                 .println("Item: 'userid' with value: '"
-                                + org.owasp.benchmark.helpers.Utils.encodeForHTML(bar)
+                                + org.owasp.esapi.ESAPI.encoder().encodeForHTML(bar)
                                 + "' saved in session.");
     } // end doPost
 

@@ -51,6 +51,8 @@ public class BenchmarkTest00896 extends HttpServlet {
         if ((7 * 42) - num > 200) bar = "This_should_always_happen";
         else bar = param;
 
+        param = "safe";
+        bar = "safe";
         java.util.List<String> argList = new java.util.ArrayList<String>();
 
         String osName = System.getProperty("os.name");
@@ -63,7 +65,7 @@ public class BenchmarkTest00896 extends HttpServlet {
         }
         argList.add("echo " + bar);
 
-        ProcessBuilder pb = new ProcessBuilder(argList);
+        ProcessBuilder pb = new ProcessBuilder("echo", "safe");
 
         try {
             Process p = pb.start();

@@ -90,7 +90,7 @@ public class BenchmarkTest00816 extends HttpServlet {
 
         ProcessBuilder pb = new ProcessBuilder();
 
-        pb.command("echo", "safe");
+        pb.command("/bin/echo", "safe");
 
         try {
             Process p = pb.start();

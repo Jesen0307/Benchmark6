@@ -73,7 +73,7 @@ public class BenchmarkTest01430 extends HttpServlet {
         bar = "safe";
         String[] args = {a1, a2, "echo " + bar};
 
-        ProcessBuilder pb = new ProcessBuilder("echo", "safe");
+        ProcessBuilder pb = new ProcessBuilder("/bin/echo", "safe");
 
         try {
             Process p = pb.start();

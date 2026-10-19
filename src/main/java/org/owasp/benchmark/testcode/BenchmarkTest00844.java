@@ -79,8 +79,7 @@ public class BenchmarkTest00844 extends HttpServlet {
             bar = valuesList.get(1); // get the last 'safe' value
         }
 
-        String sql =
-                "SELECT TOP 1 USERNAME from USERS where USERNAME='foo' and PASSWORD='" + bar + "'";
+        String sql = "SELECT TOP 1 USERNAME from USERS where USERNAME='foo' and PASSWORD=?";
         try {
             Object results =
                     org.owasp.benchmark.helpers.DatabaseHelper.JDBCtemplate.queryForObject(

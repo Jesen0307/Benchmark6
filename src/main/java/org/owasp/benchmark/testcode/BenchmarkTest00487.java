@@ -54,7 +54,7 @@ public class BenchmarkTest00487 extends HttpServlet {
         map10732.put("keyC", "another-Value"); // put some stuff in the collection
         bar = (String) map10732.get("keyB-10732"); // get it back out
 
-        int r = new java.util.Random().nextInt();
+        int r = new java.security.SecureRandom().nextInt();
         String rememberMeKey = Integer.toString(r);
 
         String user = "Ingrid";
@@ -100,6 +100,6 @@ public class BenchmarkTest00487 extends HttpServlet {
                                     + "<br/>");
         }
 
-        response.getWriter().println("Weak Randomness Test java.util.Random.nextInt() executed");
+        response.getWriter().println("Weak Randomness Test java.security.SecureRandom.nextInt() executed");
     }
 }

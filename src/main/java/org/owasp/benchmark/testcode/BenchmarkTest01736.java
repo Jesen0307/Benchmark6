@@ -46,10 +46,9 @@ public class BenchmarkTest01736 extends HttpServlet {
         if (queryString != null) paramLoc = queryString.indexOf(paramval);
         if (paramLoc == -1) {
             response.getWriter()
-                    .println(
-                            "getQueryString() couldn't find expected parameter '"
+                    .println(org.owasp.esapi.ESAPI.encoder().encodeForHTML(String.valueOf("getQueryString() couldn't find expected parameter '"
                                     + "BenchmarkTest01736"
-                                    + "' in query string.");
+                                    + "' in query string.")));
             return;
         }
 
@@ -86,14 +85,13 @@ public class BenchmarkTest01736 extends HttpServlet {
             String expression = "/Employees/Employee[@emplid='" + bar + "']";
             String result = xp.evaluate(expression, xmlDocument);
 
-            response.getWriter().println("Your query results are: " + result + "<br/>");
+            response.getWriter().println(org.owasp.esapi.ESAPI.encoder().encodeForHTML(String.valueOf("Your query results are: " + result + "<br/>")));
 
         } catch (javax.xml.xpath.XPathExpressionException
                 | javax.xml.parsers.ParserConfigurationException
                 | org.xml.sax.SAXException e) {
             response.getWriter()
-                    .println(
-                            "Error parsing XPath input: '"
+                    .println("Error parsing XPath input: '"
                                     + org.owasp.esapi.ESAPI.encoder().encodeForHTML(bar)
                                     + "'");
             throw new ServletException(e);

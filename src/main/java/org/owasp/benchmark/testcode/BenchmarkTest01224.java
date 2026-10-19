@@ -69,14 +69,13 @@ public class BenchmarkTest01224 extends HttpServlet {
             String expression = "/Employees/Employee[@emplid='" + bar + "']";
             String result = xp.evaluate(expression, xmlDocument);
 
-            response.getWriter().println("Your query results are: " + result + "<br/>");
+            response.getWriter().println(org.owasp.esapi.ESAPI.encoder().encodeForHTML(String.valueOf("Your query results are: " + result + "<br/>")));
 
         } catch (javax.xml.xpath.XPathExpressionException
                 | javax.xml.parsers.ParserConfigurationException
                 | org.xml.sax.SAXException e) {
             response.getWriter()
-                    .println(
-                            "Error parsing XPath input: '"
+                    .println("Error parsing XPath input: '"
                                     + org.owasp.esapi.ESAPI.encoder().encodeForHTML(bar)
                                     + "'");
             throw new ServletException(e);

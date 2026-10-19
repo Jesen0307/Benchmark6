@@ -89,7 +89,7 @@ public class BenchmarkTest00817 extends HttpServlet {
                 org.owasp.benchmark.helpers.ThingFactory.createThing();
         String bar = thing.doSomething(f9795); // reflection
 
-        double value = new java.util.Random().nextDouble();
+        double value = new java.security.SecureRandom().nextDouble();
         String rememberMeKey = Double.toString(value).substring(2); // Trim off the 0. at the front.
 
         String user = "Donna";
@@ -136,6 +136,6 @@ public class BenchmarkTest00817 extends HttpServlet {
                                     + "<br/>");
         }
 
-        response.getWriter().println("Weak Randomness Test java.util.Random.nextDouble() executed");
+        response.getWriter().println("Weak Randomness Test java.security.SecureRandom.nextDouble() executed");
     }
 }

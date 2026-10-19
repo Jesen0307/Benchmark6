@@ -54,7 +54,7 @@ public class BenchmarkTest00484 extends HttpServlet {
         if ((7 * 42) - num > 200) bar = "This_should_always_happen";
         else bar = param;
 
-        double value = new java.util.Random().nextDouble();
+        double value = new java.security.SecureRandom().nextDouble();
         String rememberMeKey = Double.toString(value).substring(2); // Trim off the 0. at the front.
 
         String user = "Donna";
@@ -101,6 +101,6 @@ public class BenchmarkTest00484 extends HttpServlet {
                                     + "<br/>");
         }
 
-        response.getWriter().println("Weak Randomness Test java.util.Random.nextDouble() executed");
+        response.getWriter().println("Weak Randomness Test java.security.SecureRandom.nextDouble() executed");
     }
 }

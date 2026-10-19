@@ -58,7 +58,7 @@ public class BenchmarkTest01900 extends HttpServlet {
             javax.crypto.Cipher c = javax.crypto.Cipher.getInstance(algorithm);
 
             // Prepare the cipher to encrypt
-            javax.crypto.SecretKey key = javax.crypto.KeyGenerator.getInstance("DES").generateKey();
+            javax.crypto.SecretKey key = javax.crypto.KeyGenerator.getInstance("AES").generateKey();
             c.init(javax.crypto.Cipher.ENCRYPT_MODE, key);
 
             // encrypt and store the results

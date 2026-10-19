@@ -46,10 +46,9 @@ public class BenchmarkTest00822 extends HttpServlet {
         if (queryString != null) paramLoc = queryString.indexOf(paramval);
         if (paramLoc == -1) {
             response.getWriter()
-                    .println(
-                            "getQueryString() couldn't find expected parameter '"
+                    .println(org.owasp.esapi.ESAPI.encoder().encodeForHTML(String.valueOf("getQueryString() couldn't find expected parameter '"
                                     + "BenchmarkTest00822"
-                                    + "' in query string.");
+                                    + "' in query string.")));
             return;
         }
 
@@ -75,6 +74,6 @@ public class BenchmarkTest00822 extends HttpServlet {
         else bar = "This should never happen";
 
         response.setHeader("X-XSS-Protection", "0");
-        response.getWriter().write("Parameter value: " + bar);
+        response.getWriter().write(org.owasp.esapi.ESAPI.encoder().encodeForHTML(String.valueOf("Parameter value: " + bar)));
     }
 }

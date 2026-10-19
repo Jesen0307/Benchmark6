@@ -52,7 +52,7 @@ public class BenchmarkTest02062 extends HttpServlet {
 
         String bar = doSomething(request, param);
 
-        int r = new java.util.Random().nextInt();
+        int r = new java.security.SecureRandom().nextInt();
         String rememberMeKey = Integer.toString(r);
 
         String user = "Ingrid";
@@ -98,7 +98,7 @@ public class BenchmarkTest02062 extends HttpServlet {
                                     + "<br/>");
         }
 
-        response.getWriter().println("Weak Randomness Test java.util.Random.nextInt() executed");
+        response.getWriter().println("Weak Randomness Test java.security.SecureRandom.nextInt() executed");
     } // end doPost
 
     private static String doSomething(HttpServletRequest request, String param)

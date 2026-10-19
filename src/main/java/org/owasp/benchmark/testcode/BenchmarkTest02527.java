@@ -51,8 +51,7 @@ public class BenchmarkTest02527 extends HttpServlet {
         request.getSession().setAttribute(bar, "10340");
 
         response.getWriter()
-                .println(
-                        "Item: '"
+                .println("Item: '"
                                 + org.owasp.benchmark.helpers.Utils.encodeForHTML(bar)
                                 + "' with value: '10340' saved in session.");
     } // end doPost

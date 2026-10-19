@@ -52,7 +52,7 @@ public class BenchmarkTest01049 extends HttpServlet {
 
         response.setHeader("X-XSS-Protection", "0");
         Object[] obj = {"a", bar};
-        response.getWriter().format("Formatted like: %1$s and %2$s.", obj);
+        response.getWriter().format(org.owasp.esapi.ESAPI.encoder().encodeForHTML(String.valueOf("Formatted like: %1$s and %2$s.")), obj);
     } // end doPost
 
     private class Test {

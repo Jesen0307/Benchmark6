@@ -70,18 +70,17 @@ public class BenchmarkTest01974 extends HttpServlet {
                             xp.compile(expression)
                                     .evaluate(xmlDocument, javax.xml.xpath.XPathConstants.NODESET);
 
-            response.getWriter().println("Your query results are: <br/>");
+            response.getWriter().println(org.owasp.esapi.ESAPI.encoder().encodeForHTML(String.valueOf("Your query results are: <br/>")));
 
             for (int i = 0; i < nodeList.getLength(); i++) {
                 org.w3c.dom.Element value = (org.w3c.dom.Element) nodeList.item(i);
-                response.getWriter().println(value.getTextContent() + "<br/>");
+                response.getWriter().println(org.owasp.esapi.ESAPI.encoder().encodeForHTML(String.valueOf(value.getTextContent() + "<br/>")));
             }
         } catch (javax.xml.xpath.XPathExpressionException
                 | javax.xml.parsers.ParserConfigurationException
                 | org.xml.sax.SAXException e) {
             response.getWriter()
-                    .println(
-                            "Error parsing XPath input: '"
+                    .println("Error parsing XPath input: '"
                                     + org.owasp.esapi.ESAPI.encoder().encodeForHTML(bar)
                                     + "'");
             throw new ServletException(e);

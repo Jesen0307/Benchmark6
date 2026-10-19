@@ -49,8 +49,7 @@ public class BenchmarkTest02167 extends HttpServlet {
         request.getSession().setAttribute("userid", bar);
 
         response.getWriter()
-                .println(
-                        "Item: 'userid' with value: '"
+                .println("Item: 'userid' with value: '"
                                 + org.owasp.benchmark.helpers.Utils.encodeForHTML(bar)
                                 + "' saved in session.");
     } // end doPost

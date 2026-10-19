@@ -46,10 +46,9 @@ public class BenchmarkTest01708 extends HttpServlet {
         if (queryString != null) paramLoc = queryString.indexOf(paramval);
         if (paramLoc == -1) {
             response.getWriter()
-                    .println(
-                            "getQueryString() couldn't find expected parameter '"
+                    .println(org.owasp.esapi.ESAPI.encoder().encodeForHTML(String.valueOf("getQueryString() couldn't find expected parameter '"
                                     + "BenchmarkTest01708"
-                                    + "' in query string.");
+                                    + "' in query string.")));
             return;
         }
 
@@ -73,8 +72,7 @@ public class BenchmarkTest01708 extends HttpServlet {
         request.getSession().putValue(bar, "10340");
 
         response.getWriter()
-                .println(
-                        "Item: '"
+                .println("Item: '"
                                 + org.owasp.benchmark.helpers.Utils.encodeForHTML(bar)
                                 + "' with value: 10340 saved in session.");
     } // end doPost

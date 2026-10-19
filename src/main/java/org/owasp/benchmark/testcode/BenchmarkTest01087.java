@@ -58,16 +58,15 @@ public class BenchmarkTest01087 extends HttpServlet {
             Integer results =
                     org.owasp.benchmark.helpers.DatabaseHelper.JDBCtemplate.queryForObject(
                             sql, Integer.class);
-            response.getWriter().println("Your results are: " + results);
+            response.getWriter().println(org.owasp.esapi.ESAPI.encoder().encodeForHTML(String.valueOf("Your results are: " + results)));
 
         } catch (org.springframework.dao.EmptyResultDataAccessException e) {
             response.getWriter()
-                    .println(
-                            "No results returned for query: "
+                    .println("No results returned for query: "
                                     + org.owasp.esapi.ESAPI.encoder().encodeForHTML(sql));
         } catch (org.springframework.dao.DataAccessException e) {
             if (org.owasp.benchmark.helpers.DatabaseHelper.hideSQLErrors) {
-                response.getWriter().println("Error processing request.");
+                response.getWriter().println(org.owasp.esapi.ESAPI.encoder().encodeForHTML(String.valueOf("Error processing request.")));
             } else throw new ServletException(e);
         }
     } // end doPost
